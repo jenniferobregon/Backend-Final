@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Hello User!</title>
+</head>
+<body>
+	<div>
+		<a th:href="@{/}">Home</a>
+	</div>
+	<div>
+		<a th:href="@{/posts}"><b>View Posts</b></a>
+	</div>
+	<div>
+		<a th:href="@{/register}"><b>register</b></a>
+	</div>
+	<div>
+		<a th:href="@{/login}">Login</a>
+	</div>
+
+	<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+
+	<p>You made it into the User area. Here you can post a message up
+		to 140 characters and delete messages. Bon Chance!</p>
+
+	<form action="#" th:action="@{/user}" th:object="${post}"
+		method="post">
+		<div>
+			<input th:field="*{authorID}" placeholder="Author ID" />
+		</div>
+		<div>
+			<input th:field="*{message}" placeholder="Message" />
+		</div>
+
+		<button>Submit</button>
+		<!--         <div> -->
+		<!--             <input type="submit" value="Submit Post" /> -->
+		<!--         </div> -->
+	</form>
+
+	<form th:action="@{/logout}" method="post">
+		<input type="submit" value="Sign Out" />
+	</form>
+
+</body>
+
+</html>

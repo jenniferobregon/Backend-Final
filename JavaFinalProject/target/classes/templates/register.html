@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<!-- 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"> -->
+<head>
+<title>Spring Java Back-End Final Project</title>
+<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<nav>
+		<div>
+			<a th:href="@{/}"><b>Home</b></a>
+		</div>
+		<div>
+			<a th:href="@{/posts}"><b>View Posts</b></a>
+		</div>
+		<div>
+			<a th:href="@{/register/}">Register</a>
+		</div>
+		<div>
+			<a th:href="@{/login}">Login</a>
+		</div>
+	</nav>
+	<h1>Hello!</h1>
+	<p>This is the Registration Page.</p>
+	<ul>
+		<li>Fill in your information below to create an account.</li>
+
+		<li>Once you register an account, you will then be able to post a
+			message or delete a message.</li>
+		<li>Enjoy!</li>
+	</ul>
+
+	<form action="#" th:action="@{/register/}" th:object="${user}"
+		method="post">
+		<div>
+			<input th:field="*{firstName}" placeholder="First Name" />
+		</div>
+		<div>
+			<input th:field="*{lastName}" placeholder="Last Name" />
+		</div>
+		<div>
+			<input th:field="*{username}" placeholder="Username" />
+		</div>
+		<div>
+			<input th:field="*{password}" placeholder="Password" />
+		</div>
+		<button>Submit</button>
+	</form>
+</body>
+</html>

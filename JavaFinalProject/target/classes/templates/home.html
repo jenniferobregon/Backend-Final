@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Spring Java Back-End Final Project</title>
+<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<nav>
+		<div>
+			<a th:href="@{/}"><b>Home</b></a>
+		</div>
+		<div>
+			<a th:href="@{/posts}"><b>View Posts</b></a>
+		</div>
+		<div>
+			<a th:href="@{/register}">Register</a>
+		</div>
+		<div>
+			<a th:href="@{/login}">Login</a>
+		</div>
+	</nav>
+	<h1>Welcome!</h1>
+	<p>This is the final project for JAVA SPRING BACK-END FOUNDATIONS.</p>
+	<ul>
+		<li>Follow the href links to view posts or to create an account.
+		</li>
+		<li>You can view all posts without making an account;</li>
+		<li>However, you will need an account to post a message or delete
+			a message.</li>
+		<li>Enjoy!</li>
+	</ul>
+</body>
+</html>
